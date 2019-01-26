@@ -49,7 +49,7 @@ class EditProductoSample extends ExtendedController\EditController
     {
         $pagedata = parent::getPageData();
         $pagedata['title'] = 'ProductoSample';
-        $pagedata['icon'] = 'fa-cube';
+        $pagedata['icon'] = 'fas fa-cube';
         $pagedata['menu'] = 'SamplePlugin';
         $pagedata['showonmenu'] = false;
 
@@ -62,8 +62,8 @@ class EditProductoSample extends ExtendedController\EditController
     protected function createViews()
     {
         parent::createViews();
-        $this->addEditListView('EditFamiliaSample', 'FamiliaSample', 'family', 'fa-object-group');
-        $this->addEditListView('EditFabricanteSample', 'FabricanteSample', 'manufacturer', 'fa-tasks');
+        $this->addEditListView('EditFamiliaSample', 'FamiliaSample', 'family', 'fas fa-object-group');
+        $this->addEditListView('EditFabricanteSample', 'FabricanteSample', 'manufacturer', 'fas fa-tasks');
     }
 
     /**

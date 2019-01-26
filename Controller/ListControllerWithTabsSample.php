@@ -38,7 +38,7 @@ class ListControllerWithTabsSample extends ExtendedController\ListController
     {
         $pagedata = parent::getPageData();
         $pagedata['title'] = 'ListControllerWithTabsSample';
-        $pagedata['icon'] = 'fa-cubes';
+        $pagedata['icon'] = 'fas fa-cubes';
         $pagedata['menu'] = 'SamplePlugin';
 
         return $pagedata;
@@ -59,7 +59,7 @@ class ListControllerWithTabsSample extends ExtendedController\ListController
      */
     private function createViewProducto()
     {
-        $this->addView('ListProductoSample', 'ProductoSample', 'products', 'fa-cubes');
+        $this->addView('ListProductoSample', 'ProductoSample', 'products', 'fas fa-cubes');
         $this->addSearchFields('ListProductoSample', ['referencia', 'descripcion', 'observaciones']);
         $this->addOrderBy('ListProductoSample', ['referencia'], 'reference');
         $this->addOrderBy('ListProductoSample', ['descripcion'], 'description');
@@ -88,7 +88,7 @@ class ListControllerWithTabsSample extends ExtendedController\ListController
      */
     private function createViewFamily()
     {
-        $this->addView('ListFamiliaSample', 'FamiliaSample', 'families', 'fa-object-group');
+        $this->addView('ListFamiliaSample', 'FamiliaSample', 'families', 'fas fa-object-group');
         $this->addSearchFields('ListFamiliaSample', ['descripcion', 'codfamilia', 'madre']);
         $this->addOrderBy('ListFamiliaSample', ['codfamilia'], 'code');
         $this->addOrderBy('ListFamiliaSample', ['descripcion'], 'description');
@@ -103,7 +103,7 @@ class ListControllerWithTabsSample extends ExtendedController\ListController
      */
     private function createViewManufacturer()
     {
-        $this->addView('ListFabricanteSample', 'FabricanteSample', 'manufacturers', 'fa-tasks');
+        $this->addView('ListFabricanteSample', 'FabricanteSample', 'manufacturers', 'fas fa-tasks');
         $this->addSearchFields('ListFabricanteSample', ['codfabricante']);
         $this->addOrderBy('ListFabricanteSample', ['codfabricante'], 'reference');
         $this->addOrderBy('ListFabricanteSample', ['nombre'], 'name');
