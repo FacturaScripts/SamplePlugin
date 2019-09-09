@@ -1,7 +1,7 @@
 <?php
 /**
- * This file is part of FacturaScripts
- * Copyright (C) 2012-2018 Carlos Garcia Gomez <carlos@facturascripts.com>
+ * This file is part of SamplePlugin for FacturaScripts
+ * Copyright (C) 2019 Carlos Garcia Gomez <carlos@facturascripts.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -16,18 +16,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-namespace FacturaScripts\Plugins\SamplePlugin\Model;
+namespace FacturaScripts\Plugins\SamplePlugin;
 
-use FacturaScripts\Core\Model;
+use FacturaScripts\Core\Base\InitClass;
 
 /**
- * A manufacturer of products.
+ * Description of Init
  *
- * This class is only a placeholder to don't break the generator and avoid copy&paste code.
- *
- * @author Carlos García Gómez <carlos@facturascripts.com>
- * @author Artex Trading sa <jcuello@artextrading.com>
+ * @author Carlos Garcia Gomez <carlos@facturascripts.com>
  */
-class FabricanteSample extends Model\Fabricante
+class Init extends InitClass
 {
+
+    public function init()
+    {
+        $this->loadExtension(new Extension\Controller\ListProducto());
+        $this->loadExtension(new Extension\Model\Producto());
+    }
+
+    public function update()
+    {
+        ;
+    }
 }
