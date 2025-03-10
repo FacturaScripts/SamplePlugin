@@ -18,6 +18,9 @@
  */
 namespace FacturaScripts\Plugins\SamplePlugin\Extension\Model;
 
+use Closure;
+use FacturaScripts\Core\Tools;
+
 /**
  * Description of Producto
  *
@@ -29,7 +32,7 @@ class Producto
     /**
      * Adds prefix() method to the model.
      */
-    public function prefix()
+    public function prefix() : Closure
     {
         return function($prefix = 'PRE-') {
             $this->referencia = $prefix . $this->referencia;
@@ -37,17 +40,17 @@ class Producto
         };
     }
 
-    public function save()
+    public function save() : Closure
     {
         return function() {
-            $this->toolBox()->log()->notice('This code is executed after save() method is called.');
+            Tools::log()->notice('This code is executed after save() method is called.');
         };
     }
 
-    public function saveBefore()
+    public function saveBefore() : Closure
     {
         return function() {
-            $this->toolBox()->log()->notice('This code is executed before save() method is called.'
+            Tools::log()->notice('This code is executed before save() method is called.'
                 . ' And return false can stop save().');
         };
     }
@@ -55,7 +58,7 @@ class Producto
     /**
      * Adds suffix() method to the model.
      */
-    public function suffix()
+    public function suffix() : Closure
     {
         return function($suffix = '-SUF') {
             return $this->referencia . $suffix;

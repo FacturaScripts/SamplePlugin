@@ -18,6 +18,8 @@
  */
 namespace FacturaScripts\Plugins\SamplePlugin\Extension\Controller;
 
+use Closure;
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Dinamic\Model\Producto;
 
 /**
@@ -31,17 +33,17 @@ class ListProducto
     public function createViews()
     {
         return function() {
-            $this->createViewLogs();
 
             /// Test new methods in Producto model
             $product = new Producto();
             $product->referencia = '1234';
-            $this->toolBox()->log()->notice('Test Producto->prefix() = ' . $product->prefix());
-            $this->toolBox()->log()->notice('Test Producto->suffix() = ' . $product->suffix());
+            
+            Tools::log()->notice('Test Producto->prefix() = ' . $product->prefix());
+            Tools::log()->notice('Test Producto->suffix() = ' . $product->suffix());
         };
     }
 
-    public function createViewLogs()
+    public function createViewLogs() : Closure
     {
         return function($viewName = 'ListLogMessage') {
             $this->addView($viewName, 'LogMessage', 'log');
