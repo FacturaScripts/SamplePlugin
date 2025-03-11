@@ -30,7 +30,7 @@ use FacturaScripts\Dinamic\Model\Producto;
 class ListProducto
 {
 
-    public function createViews()
+    public function createViews() : Closure
     {
         return function() {
 
