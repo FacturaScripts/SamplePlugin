@@ -1,7 +1,13 @@
 # SamplePlugin
 
-This plugin doesn't add new features to FS2018, is only for help new developers and for try that new features don't break the old code.
+This plugin has some examples for new developers who wants to learn how facturascripts plugins works.
 
-Also contains a lot of specific samples to learn how plugins works.
+### Examples:
+
+- Producto
+
+> This section is under `/SamplePlugin/Extension` and it has a modified `Producto` wich includes a `prefix` and `suffix` columns.
+
+### Link to the plugin:
 
 https://www.facturascripts.com/plugins/SamplePlugin
