@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  * This file is part of FacturaScripts
- * Copyright (C) 2017-2019 Carlos Garcia Gomez <carlos@facturascripts.com>
+ * Copyright (C) 2017-2023 Carlos Garcia Gomez <carlos@facturascripts.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
@@ -16,16 +16,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * @author Carlos García Gómez  <carlos@facturascripts.com>
- * @author Artex Trading sa     <jcuello@artextrading.com>
+ * @author Fco. Antonio Moreno Pérez <famphuelva@gmail.com>
+ * @author Carlos García Gómez       <carlos@facturascripts.com>
 -->
 <view>
     <columns>
-        <column name="prefix" order="99">
-            <widget type="text" fieldname="prefix"/>
-        </column>
-        <column name="suffix" order="101">
-            <widget type="text" fieldname="suffix"/>
-        </column>
+        <group name="main" numcolumns="12">
+            <column name="prefix" order="99">
+                <widget type="text" fieldname="prefix"/>
+            </column>
+            <column name="suffix" order="101">
+                <widget type="text" fieldname="suffix"/>
+            </column>
+        </group>
     </columns>
 </view>
