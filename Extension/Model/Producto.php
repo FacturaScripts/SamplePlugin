@@ -106,7 +106,7 @@ class Producto
     public function saveInsertBefore() : Closure
     {
         return function() {
-            Tools::log()->notice('This code is executed after inserting "Producto" into the database.'
+            Tools::log()->notice('This code is executed before inserting "Producto" into the database.'
                 . ' And return false to prevent saveInsert().');
         };
     }
