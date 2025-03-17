@@ -14,14 +14,14 @@ class EditDummyModel extends EditController
     {
         $pagedata = parent::getPageData();
         $pagedata['menu'] = 'SamplePlugin';
-        $pagedata['title'] = 'Edit samples';
+        $pagedata['title'] = 'Create samples';
         $pagedata['icon'] = 'fa-solid fa-pen-to-square';
         $pagedata['showonmenu'] = true; // is false in default
         return $pagedata;
     }
 
-    protected function createViews() 
+    protected function createViews()
     {
-        $this->addListView('EditDummyModel', 'DummyModel', 'Editar DummyModels', 'fa-solid fa-pen-to-square');
+        $this->addEditView('EditDummyModel', 'DummyModel', 'Editar dummy', 'fa-solid fa-pen-to-square');
     }
 }
