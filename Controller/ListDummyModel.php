@@ -16,13 +16,10 @@ class ListDummyModel extends ListController
 
     protected function createViews($viewName = 'ListDummyModel') 
     {
-        $this->addView($viewName, 'DummyModel', 'Listar dummy', 'fa-solid fa-list-ul');
-
-        $this->addSearchFields($viewName, ['name']);
-
-        $this->addFilterCheckbox($viewName, 'filter1', 'verified', 'verified', '=', true);
-
-        $this->addOrderBy($viewName, ['price'], 'order-by-price', 2)
+        $this->addView($viewName, 'DummyModel', 'Listar dummy', 'fa-solid fa-list-ul')
+            ->addSearchFields(['name'])
+            ->addFilterCheckbox('filter1', 'verified', 'verified', '=', true)
+            ->addOrderBy(['price'], 'order-by-price', 2)
             ->addOrderBy(['dummy_type'], 'order-by-condition')
             ->addOrderBy(['resell_value'], 'order-by-resell_value');
     }

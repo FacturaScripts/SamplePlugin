@@ -16,7 +16,6 @@ class EditDummyModel extends EditController
         $pagedata['menu'] = 'SamplePlugin';
         $pagedata['title'] = 'Create samples';
         $pagedata['icon'] = 'fa-solid fa-pen-to-square';
-        $pagedata['showonmenu'] = true; // is false in default
         return $pagedata;
     }
 
