@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Full documentation: https://facturascripts.com/publicaciones/las-vistas-xml-xmlview-668
+-->
+<view>
+    <columns>
+        <group name="about" numcolumns="6" valign="center">
+            <column name="name" numcolumns="3">
+                <widget type="text" fieldname="name" required="true"/>
+            </column>
+            <column name="price" numcolumns="3">
+                <widget type="money" fieldname="price" />
+            </column>
+            <column name="dummy_type" numcolumns="3">
+                <widget type="radio" translate="true" fieldname="dummy_type" required="true">
+                    <values title="new">new</values>
+                    <values title="used">used</values>
+                    <values title="old">old</values>
+                </widget>
+            </column>
+            <column name="resell_value" numcolumns="3">
+                <widget translate="true" type="select" fieldname="resell_value">
+                    <values title="low">low</values>
+                    <values title="middle">middle</values>
+                    <values title="high">high</values>
+               </widget>
+            </column>
+            <column name="dummy_passwd" numcolumns="3">
+                <widget type="password" fieldname="dummy_passwd" maxlength="15"/>
+            </column>
+            <column name="isVerified" numcolumns="3">
+                <widget type="checkbox" fieldname="verified"/>
+            </column>
+            <column name="color">
+                <widget type="color" fieldname="color"/>
+            </column>
+        </group>
+        <group name="spects" numcolumns="6">
+            <column name="description" numcolumns="12">
+                <widget type="textarea" fieldname="description" />
+            </column>
+
+            <column name="dummy_rating">
+                <widget type="stars" fieldname="dummy_rating"/>
+            </column>
+            <column name="dummy_link">
+                <widget type="link" fieldname="dummy_link"/>
+            </column>
+            <column name="programmed_date">
+                <widget type="date" fieldname="programmed_date"/>
+            </column>
+            <column name="programmed_hour">
+                <widget type="time" fieldname="programmed_hour"/>
+            </column>
+        </group>
+
+        <group name="extra" valign="center">
+            <column name="city" numcolumns="2">
+                <widget type="datalist" fieldname="asociated_city">
+                    <values source="ciudades" fieldcode="ciudad" fieldtitle="ciudad" limit="9000"/>
+                </widget>
+            </column>
+            <column name="asociated_product" numcolumns="2">
+                <widget type="variante" fieldname="asociated_product" match="idproducto"/>
+            </column>
+            <column name="profile_photo" numcolumns="2">
+                <widget type="library" fieldname="profile_photo" accept=".gif,.jpg,.png"/>
+            </column>
+            <column name="file" numcolumns="2">
+                <widget type="file" fieldname="dummy_file" multiple="false"/>
+            </column>
+            <column name="other_dummy" numcolumns="2">
+                <widget type="autocomplete" fieldname="other_dummy" onclick="EditDummyModel">
+                    <values source="dummies" fieldcode="id" fieldtitle="name"/>
+                </widget>
+            </column>
+            <column name="random_number">
+                <widget type="number" fieldname="random_number" readonly="true"/>
+            </column>
+        </group>
+    </columns>
+</view>

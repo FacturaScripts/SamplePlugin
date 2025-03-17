@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Full documentation: https://facturascripts.com/publicaciones/las-vistas-xml-xmlview-668
+-->
+<view>
+    <columns>
+        <column name="id" display="center" order="100">
+            <widget type="text" fieldname="id" />
+        </column>
+        <column name="name" display="center" order="110">
+            <widget type="text" fieldname="name" />
+        </column>
+        <column name="price" display="right" order="120">
+            <widget type="money" fieldname="price" required="true"/>
+        </column>
+        <column name="dummy_type" display="center" order="130">
+            <widget type="select" translate="true" fieldname="dummy_type">
+                <option color="success">new</option>
+                <option color="warning">used</option>
+                <option color="danger">old</option>
+
+                <values title="new">new</values>
+                <values title="used">used</values>
+                <values title="old">old</values>
+            </widget>
+        </column>
+        <column name="resell_value" numcolumns="3" order="131">
+            <widget type="select" translate="true" fieldname="resell_value">
+                <option color="success">high</option>
+                <option color="info">middle</option>
+                <option color="warning">low</option>
+
+                <values title="low">low</values>
+                <values title="middle">middle</values>
+                <values title="high">high</values>
+            </widget>
+        </column>
+        <column name="dummy_passwd" display="center" order="140">
+            <widget type="password" fieldname="dummy_passwd">
+                <option color="danger"></option>
+                <option color="success">neq:</option>
+            </widget>
+        </column>
+        <column name="isVerified" display="center" order="150">
+            <widget type="checkbox" fieldname="verified" />
+        </column>
+        <column name="color" display="center" order="160" overwrite="true">
+                <widget type="ShowDummyColor" fieldname="color"/>
+        </column>
+        <!-- <column name="color" display="center" order="160">
+            <widget type="color" fieldname="color" />
+        </column> -->
+        <column name="description" display="center" order="170">
+            <widget type="textarea" fieldname="description" />
+        </column>
+        <column name="dummy_rating" order="180">
+            <widget type="stars" fieldname="dummy_rating">
+                <option color="success">gte:3</option>
+                <option color="secondary">lt:3</option>
+            </widget>
+        </column>
+        <column name="dummy_link" order="190">
+            <widget type="link" fieldname="dummy_link"/>
+        </column>
+        <column name="programmed_date" order="200">
+            <widget type="date" fieldname="programmed_date"/>
+        </column>
+        <column name="programmed_hour" order="210">
+            <widget type="time" fieldname="programmed_hour"/>
+        </column>
+        
+        <column name="city" order="220">
+            <widget type="datalist" fieldname="asociated_city">
+                <values source="ciudades" fieldcode="ciudad" fieldtitle="ciudad" limit="9000"/>
+            </widget>
+        </column>
+        <column name="asociated_product" order="230">
+            <widget type="variante" fieldname="asociated_product" match="idproducto"/>
+        </column>
+        <column name="profile_photo" order="240" overwrite="true">
+            <widget type="ShowImage" fieldname="profile_photo" accept=".gif,.jpg,.png"/>
+        </column>
+        <!-- <column name="profile_photo" order="240">
+            <widget type="library" fieldname="profile_photo" accept=".gif,.jpg,.png"/>
+        </column> -->
+        <column name="file" order="250">
+            <widget type="file" fieldname="dummy_file" multiple="false"/>
+        </column>
+        <column name="other_dummy" display="center" order="260">
+            <widget type="select" fieldname="other_dummy">
+                  <values source="dummies" fieldcode="id" fieldtitle="name"></values>
+            </widget>
+        </column>
+        <column name="random_number" display="center" order="280">
+            <widget type="integer" fieldname="random_number" />
+        </column>
+        <column name="creation_date" display="center" order="290">
+            <widget type="timestamp" fieldname="creation_date" />
+        </column>
+        <column name="modification_date" display="center" order="300">
+            <widget type="timestamp" fieldname="modification_date" />
+        </column>
+    </columns>
+    <rows>
+        <row type="status">
+            <option color="info" fieldname="verified">1</option>
+            <option color="light" fieldname="verified">0</option>
+        </row>
+    </rows>
+</view>
