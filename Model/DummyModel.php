@@ -1,8 +1,8 @@
 <?php
 namespace FacturaScripts\Plugins\SamplePlugin\Model;
 
-use FacturaScripts\Core\Model\Base\ModelClass;
-use FacturaScripts\Core\Model\Base\ModelTrait;
+use FacturaScripts\Core\Template\ModelClass;
+use FacturaScripts\Core\Template\ModelTrait;
 use FacturaScripts\Core\Tools;
 
 class DummyModel extends ModelClass
@@ -41,7 +41,7 @@ class DummyModel extends ModelClass
         return 'dummies';
     }
 
-    public function clear() {
+    public function clear(): void {
         parent::clear();
         // define here default values for cols
         $this->price = 0;
